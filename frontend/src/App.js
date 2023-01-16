@@ -1,8 +1,9 @@
+import Navigation from './Navigation.js'
 
 function App() {
   return (
     <div>
-      Hello world
+      <Navigation />
     </div>
   );
 }
