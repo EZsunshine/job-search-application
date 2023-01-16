@@ -1,4 +1,5 @@
 import Dashboard from "./Dashboard/dashboard";
+import MyApp from "./Dashboard/myApp";
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       Hello world, this is David
     </div>
     <Dashboard />
+  <MyApp />
     </>
   );
 }
