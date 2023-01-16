@@ -13,7 +13,6 @@ export default function Dashboard(){
                     <label>Your state</label>
                     <br />
                     <select>
-                        
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
                         <option value="AZ">Arizona</option>
