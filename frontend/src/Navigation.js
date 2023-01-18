@@ -11,6 +11,8 @@ import Sheet from '@mui/joy/Sheet';
 import PieChart from '@mui/icons-material/PieChart';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
+import { Link } from "react-router-dom"
+
 export default function Navigation() {
   return (
     <Box sx={{ display: 'flex' }}>
@@ -40,22 +42,28 @@ export default function Navigation() {
             minWidth: 256,
           }}
         >
-          <ListItemButton>
-            <ListItemDecorator>
-              <PieChart />
-            </ListItemDecorator>
-            Dashboard
-          </ListItemButton>
-          <ListItemButton>
-            <ListItemDecorator />
-            Account
-          </ListItemButton>
-          <ListItemButton>
-            <ListItemDecorator>
-              <PieChart />
-            </ListItemDecorator>
-            Log Out
-          </ListItemButton>
+          <Link to={"/dashboard"}>
+            <ListItemButton>
+              <ListItemDecorator>
+                <PieChart />
+              </ListItemDecorator>
+              Dashboard
+            </ListItemButton>
+          </Link>
+          <Link to={"/dashboard/account"}>
+            <ListItemButton>
+              <ListItemDecorator />
+              Account
+            </ListItemButton>
+          </Link>
+          <Link to={"/"}>
+            <ListItemButton>
+              <ListItemDecorator>
+                <PieChart />
+              </ListItemDecorator>
+              Logout
+            </ListItemButton>
+          </Link>
         </List>
         
         <Divider sx={{ mt: 'auto', mb: 80, mx: -2 }} />

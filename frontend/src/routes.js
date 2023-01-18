@@ -16,7 +16,7 @@ export default function Router() {
       path: '/dashboard',
       element: <DashboardLayout />,
       children: [
-        { path: 'app', element: <Search />},
+        { index: true, element: <Search />},
         { path: 'account', element: <Account /> }
       ],
     }
