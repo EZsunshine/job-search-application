@@ -31,9 +31,9 @@ function Search() {
     handleFormSubmit();
   }, []);
 
-function navigateToJobDescripton() {
-  navigate('/dashboard/job')
-}
+  function navigateToJobDescripton(data) {
+    navigate('/dashboard/job', {state: data})
+  }
 
   return (
     <div>
@@ -59,7 +59,7 @@ function navigateToJobDescripton() {
         {listings.length > 0 && (
           <ul>
             {listings.map((listing) => (
-              <Button onClick={navigateToJobDescripton}>
+              <Button onClick={() => {navigateToJobDescripton(listing)}}>
                 <li key={listing.id}><Listings data={listing} /></li>
               </Button>
             ))}
