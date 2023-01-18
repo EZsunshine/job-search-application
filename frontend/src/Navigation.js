@@ -42,22 +42,28 @@ export default function Navigation() {
             minWidth: 256,
           }}
         >
-          <ListItemButton>
-            <ListItemDecorator>
-              <PieChart />
-            </ListItemDecorator>
-            <Link to={"/dashboard"}>Dashboard</Link>
-          </ListItemButton>
-          <ListItemButton>
-            <ListItemDecorator />
-            <Link to={"/dashboard/account"}>Account</Link>
-          </ListItemButton>
-          <ListItemButton>
-            <ListItemDecorator>
-              <PieChart />
-            </ListItemDecorator>
-            <Link to={"/"}>Logout</Link>
-          </ListItemButton>
+          <Link to={"/dashboard"}>
+            <ListItemButton>
+              <ListItemDecorator>
+                <PieChart />
+              </ListItemDecorator>
+              Dashboard
+            </ListItemButton>
+          </Link>
+          <Link to={"/dashboard/account"}>
+            <ListItemButton>
+              <ListItemDecorator />
+              Account
+            </ListItemButton>
+          </Link>
+          <Link to={"/"}>
+            <ListItemButton>
+              <ListItemDecorator>
+                <PieChart />
+              </ListItemDecorator>
+              Logout
+            </ListItemButton>
+          </Link>
         </List>
         
         <Divider sx={{ mt: 'auto', mb: 80, mx: -2 }} />
