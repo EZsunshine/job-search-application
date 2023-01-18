@@ -7,16 +7,21 @@ function Account() {
 
     return ( 
         <>
-            Account Data
+            Account Data/Settings
+            <br />
+            <Button variant="contained" component="label">
+                Upload Resume
+            <input hidden accept="image/*" multiple type="file" />
+            </Button>
 
             <br></br>
 
-            Job History
+            Account Data/Job History
             <div>
                 {accData.length > 0 && (
                 <ul>
                     {accData.map((data) => (
-                        <li key={accData.id}><JobHistory /></li>
+                        <li key={data.id}><JobHistory /></li>
                     ))}
                 </ul>
                 )}
