@@ -17,7 +17,7 @@ function Search() {
       `http://localhost:8000/?keyword=${form.keyword}&location=${form.location}`
     );
     const data = await response.json();
-    setListings(data);
+    setListings(data.results);
     //console.log(listings);
     //console.log(listings.results.length);
     setForm(emptyForm);
@@ -48,9 +48,9 @@ function Search() {
       </form>
 
       <div>
-        {listings.results.length > 0 && (
+        {listings.length > 0 && (
           <ul>
-            {listings.results.map((listing) => (
+            {listings.map((listing) => (
               <li key={listing.id}><Listings data={listing} /></li>
             ))}
           </ul>
