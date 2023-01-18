@@ -6,8 +6,9 @@ function Search() {
   const [listings, setListings] = useState([]);
 
   function handleChange(e) {
-    const {keyword, location} = e.target;
-    setForm({ ...form });
+    const  value = e.target.value;
+    setForm({ ...form, [e.target.name]: value});
+    console.log("this is the form: ", form)
   }
 
   async function handleFormSubmit(e) {
