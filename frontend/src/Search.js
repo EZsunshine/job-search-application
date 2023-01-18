@@ -2,23 +2,25 @@ import React, { useState, useEffect } from "react";
 import Listings from "./Listings";
 
 function Search() {
-  const [form, setForm] = useState({ keyword: "", location: "" });
+  const emptyForm = {keyword: "", location: ""}
+  const [form, setForm] = useState(emptyForm);
   const [listings, setListings] = useState([]);
 
   function handleChange(e) {
-    const {keyword, location} = e.target;
-    setForm({ ...form });
+    const value = e.target.value;
+    setForm({ ...form, [e.target.name]: value});
   }
 
   async function handleFormSubmit(e) {
     e.preventDefault();
-    const { keyword, location } = e.target;
-    console.log({...form});
     const response = await fetch(
-      `http://localhost/8000?keyword=${keyword}&location=${location}`
+      `http://localhost:8000/?keyword=${form.keyword}&location=${form.location}`
     );
     const data = await response.json();
     setListings(data);
+    //console.log(listings);
+    //console.log(listings.results.length);
+    setForm(emptyForm);
   }
 
   useEffect(() => {
@@ -31,12 +33,14 @@ function Search() {
         <input
           type="text"
           name="keyword"
+          value={form.keyword}
           placeholder="keyword"
           onChange={handleChange}
         />
         <input
           type="text"
           name="location"
+          value={form.location}
           placeholder="location"
           onChange={handleChange}
         />
@@ -44,10 +48,10 @@ function Search() {
       </form>
 
       <div>
-        {listings.length > 0 && (
+        {listings.results.length > 0 && (
           <ul>
-            {listings.map((listing) => (
-              < Listings job={listing.title} />
+            {listings.results.map((listing) => (
+              <li key={listing.id}><Listings data={listing} /></li>
             ))}
           </ul>
         )}
