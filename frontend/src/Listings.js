@@ -1,36 +1,23 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
 
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-  >
-    •
-  </Box>
-);
+import Typography from "@mui/material/Typography";
 
-function Listings({data}) {
+function Listings({ data }) {
   return (
-    <Card sx={{minWidth: 400}}>
+    <Card sx={{ minWidth: 400, border: '1px solid grey'}}>
       <CardContent>
-      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-      ${data.title} up to ${data.salary_max}
+        <Typography sx={{ fontSize: 21 }} color="text.primary" gutterBottom>
+          {data.title} up to {data.salary_max}
         </Typography>
-        
+        <Typography sx={{ fontSize: 18 }} color="text.primary" gutterBottom>
+          {data.location.display_name}
+        </Typography>
+        <Typography sx={{ fontSize: 16 }}>{data.description}</Typography>
       </CardContent>
-    <div>
-      <h4>
-        
-      </h4>
-      <h5>${data.location.display_name}</h5>
-      <p>${data.description}</p>
-    </div>
     </Card>
   );
 }
