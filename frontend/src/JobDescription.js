@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 
 function JobDescription() {
     const {state} = useLocation();
-//console.log(state);
+console.log(state);
     return ( 
         <div>
             <h1>{state.company.display_name}</h1>

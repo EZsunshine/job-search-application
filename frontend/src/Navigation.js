@@ -50,6 +50,12 @@ export default function Navigation() {
               Dashboard
             </ListItemButton>
           </Link>
+          <Link to={"/dashboard/search"}>
+            <ListItemButton>
+              <ListItemDecorator />
+              Job Search
+            </ListItemButton>
+          </Link>
           <Link to={"/dashboard/account"}>
             <ListItemButton>
               <ListItemDecorator />
