@@ -1,15 +1,12 @@
 import { useState } from "react";
 import { Button } from "@mui/material";
 import JobHistory from "./JobHistory";
-import { useSelector } from "react-redux";
 
 function Account() {
     const [accData, setAccData] = useState([1, 2])
 
-
     return ( 
         <>
-
             Account Data/Settings
             <br />
             <Button variant="contained" component="label">

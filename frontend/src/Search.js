@@ -6,6 +6,7 @@ import Box from "@mui/material/Box";
 
 
 
+
 function Search() {
   const emptyForm = { keyword: "", location: "" };
   const [form, setForm] = useState(emptyForm);
@@ -40,19 +41,20 @@ function Search() {
 
   return (
     <div>
+
       <form onSubmit={handleFormSubmit}>
         <input
           type="text"
           name="keyword"
           value={form.keyword}
-          placeholder="keyword"
+          placeholder="Job title, keywords, or company"
           onChange={handleChange}
         />
         <input
           type="text"
           name="location"
           value={form.location}
-          placeholder="location"
+          placeholder="Location"
           onChange={handleChange}
         />
         <input type="submit" value="Submit" />
