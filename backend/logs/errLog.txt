@@ -1,0 +1,2 @@
+20230120	17:11:43	f740be35-f524-4d0a-8c49-11d44c7df388	Error: ENOENT: no such file or directory, stat '/Users/ezsun/Desktop/job-search-application/backend/routes/views/index.html'
+20230120	17:12:16	34429a5d-a9c6-4529-a704-63af7e23d5b5	ForbiddenError: Forbidden
