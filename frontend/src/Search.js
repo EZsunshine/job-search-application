@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import Listings from "./Listings";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
+import { Button } from "@mui/material";
+
 
 function Search() {
   const emptyForm = { keyword: "", location: "" };
@@ -37,23 +39,32 @@ function Search() {
   // }
 
   return (
+    <>
     <div>
+      Welcome back!
+    </div>
+    <div>
+
       <form onSubmit={handleFormSubmit}>
         <input
           type="text"
           name="keyword"
           value={form.keyword}
-          placeholder="keyword"
+          placeholder="Job title, keywords, or company"
           onChange={handleChange}
         />
         <input
           type="text"
           name="location"
           value={form.location}
-          placeholder="location"
+          placeholder="Location"
           onChange={handleChange}
         />
-        <input type="submit" value="Submit" />
+        <Button variant="contained" type="submit" value="Submit">
+          Search
+        </Button>
+
+        {/* <input type="submit" value="Submit" /> */}
       </form>
 
       <div>
@@ -80,6 +91,7 @@ function Search() {
         )}
       </div>
     </div>
+    </>
   );
 }
 
