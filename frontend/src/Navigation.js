@@ -386,6 +386,7 @@ export default function Navigation() {
             display: "flex",  
             flexGrow: 1, 
             justifyContent: "space-evenly",
+            color: "white",
             bgcolor: "background",
             hover: "white",
             textAlign: "center",
