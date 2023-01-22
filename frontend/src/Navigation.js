@@ -395,19 +395,19 @@ export default function Navigation() {
 
 <Tabs value={value} onChange={handleTabChange} color="white" centered>
 
-        <Link to={"/dashboard"}>
+        <Link to={"/dashboard"} style={{ textDecoration: "none", color: "white"}}>
           <Tab label="Dashboard" />
         </Link>
 
-        <Link to={"/dashboard/search"}>
+        <Link to={"/dashboard/search"} style={{ textDecoration: "none", color: "white"}}>
           <Tab label="Find Jobs"/>
         </Link>
 
-        <Link to={"/dashboard/account"}>
+        <Link to={"/dashboard/account"} style={{ textDecoration: "none", color: "white"}}>
           <Tab label="Account" />
         </Link>
 
-        <Link to={"/"}>
+        <Link to={"/"} style={{ textDecoration: "none", color: "white"}}>
           <Tab label="Logout" />
         </Link>
         
