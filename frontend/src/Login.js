@@ -13,9 +13,8 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import axios from "./api/axios";
-import AuthContext from "./context/AuthProvider";
 import { useNavigate } from "react-router-dom";
-
+import useAuth from "./hooks/useAuth";
 
 function Copyright(props) {
   return (
@@ -38,7 +37,7 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function Login(props) {
-  const { setAuth } = useContext(AuthContext);
+  const { setAuth } = useAuth();
   const [success, setSuccess] = useState(false);
 
   const navigate = useNavigate();
@@ -48,7 +47,7 @@ export default function Login(props) {
     const data = new FormData(event.currentTarget);
     const email = data.get("email");
     const password = data.get("password");
-  
+
     try {
       const response = await axios.post(
         "/auth",
@@ -78,7 +77,7 @@ export default function Login(props) {
   return (
     <>
       {success ? (
-        navigate('/dashboard')
+        navigate("/dashboard")
       ) : (
         <ThemeProvider theme={theme}>
           <Container component="main" maxWidth="xs">

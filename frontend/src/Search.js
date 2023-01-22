@@ -4,7 +4,6 @@ import Listings from "./Listings";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 
-
 function Search() {
   const emptyForm = { keyword: "", location: "" };
   const [form, setForm] = useState(emptyForm);

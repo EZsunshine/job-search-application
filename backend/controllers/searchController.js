@@ -15,7 +15,7 @@ const decodeParams = (searchParams) =>
     {}
   );
 
-const handlerSearch = (req, res) => {
+const handlerSearch = async (req, res) => {
   const requestURL = url.parse(req.url);
   const decodedParams = decodeParams(new URLSearchParams(requestURL.search));
   const { keyword, location, country = "us" } = decodedParams;
@@ -25,19 +25,18 @@ const handlerSearch = (req, res) => {
   }&app_id=${process.env.APP_ID}&app_key=${
     process.env.API_KEY
   }&what=${keyword}&where=${location}`;
-  if (req.method === "GET") {
-    axios
-      .get(targetURL)
-      .then((response) => {
-        res.writeHead(200, headers);
-        res.end(JSON.stringify(response.data));
-      })
-      .catch((response) => {
-        console.log(response);
-        res.writeHead(500, headers);
-        res.end(JSON.stringify(response));
-      });
-  }
+
+  axios
+    .get(targetURL)
+    .then((response) => {
+      res.writeHead(200, headers);
+      res.end(JSON.stringify(response.data));
+    })
+    .catch((response) => {
+      console.log(response);
+      res.writeHead(500, headers);
+      res.end(JSON.stringify(response));
+    });
 };
 
 module.exports = { handlerSearch };
