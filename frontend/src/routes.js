@@ -5,8 +5,10 @@ import DashboardLayout from './DashboardLayout';
 import Onboarding from './Onboarding';
 import Account from './Account';
 import Search from './Search';
-import Dashboard from './Dashboard';
+import Dashboard from './SavedJobs';
 import JobDescription from './JobDescription';
+import SavedJobs from './SavedJobs';
+import AppliedJobs from './AppliedJobs';
 
 export default function Router() {
   const routes = useRoutes([
@@ -18,10 +20,9 @@ export default function Router() {
       path: '/dashboard',
       element: <DashboardLayout />,
       children: [
-        { index: true, element: <Dashboard />},
-        { path: 'search', element: <Search /> },
-        { path: 'account', element: <Account /> },
-        { path: 'job', element: <JobDescription/>}
+        { index: true, element: <Search />},
+        { path: 'saved', element: <SavedJobs />  },
+        { path: 'applied', element: <AppliedJobs /> },
       ],
     },
   ]);

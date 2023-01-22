@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { Card, Typography } from '@mui/material';
 
 
-function Dashboard() {
+function SavedJobs() {
     const {total} = useSelector((state) => state.favorite)
     
     return ( 
@@ -19,4 +19,4 @@ function Dashboard() {
      );
 }
 
-export default Dashboard;
+export default SavedJobs;
