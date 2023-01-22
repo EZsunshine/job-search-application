@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 import Listings from "./Listings";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-
-
 
 function Search() {
   const emptyForm = { keyword: "", location: "" };
   const [form, setForm] = useState(emptyForm);
   const [listings, setListings] = useState([]);
 
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   function handleChange(e) {
     const value = e.target.value;
