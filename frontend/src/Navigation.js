@@ -214,6 +214,11 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import { Button } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -258,9 +263,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function Navigation() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const [value, setValue] = React.useState(0); 
+
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+  const handleTabChange = (event, newValue) => {
+    setValue(newValue);
+  };
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -353,11 +364,12 @@ export default function Navigation() {
     </Menu>
   );
 
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed">
         <Toolbar>
-          <Box sx={{ flexGrow: 1 }}>
+          <Box sx={{ display: "flex", flexGrow: 1 }}>
             <Typography
               variant="h6"
               noWrap
@@ -370,25 +382,42 @@ export default function Navigation() {
           
 
 
-          <Box sx={{ flexGrow: 1 }} >
-            <Box sx={{ justifyContent: "space-around"}}>
-            <Link to={"/dashboard"}>
-                Dashboard
-            </Link>
-            <Link to={"/dashboard/search"}>
-                Job Search
-            </Link>
-            <Link to={"/dashboard/account"}>
-                Account
-            </Link>
-            <Link to={"/"}>
-                Logout
-            </Link>
-            </Box>
+          <Box sx={{ 
+            display: "flex",  
+            flexGrow: 1, 
+            justifyContent: "space-evenly",
+            bgcolor: "background",
+            hover: "white",
+            textAlign: "center",
+            textDecoration: "none", }} >
+
+
+<Tabs value={value} onChange={handleTabChange} color="white" centered>
+
+        <Link to={"/dashboard"}>
+          <Tab label="Dashboard" />
+        </Link>
+
+        <Link to={"/dashboard/search"}>
+          <Tab label="Find Jobs"/>
+        </Link>
+
+        <Link to={"/dashboard/account"}>
+          <Tab label="Account" />
+        </Link>
+
+        <Link to={"/"}>
+          <Tab label="Logout" />
+        </Link>
+        
+
+      </Tabs>
 
           </Box>
+
+
           
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, flexGrow: 1, justifyContent: "flex-end" }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={5} color="error">
                 <MailIcon />
