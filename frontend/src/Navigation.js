@@ -410,7 +410,6 @@ export default function Navigation() {
           <Tab label="Logout" />
         </Link>
         
-
       </Tabs>
 
           </Box>

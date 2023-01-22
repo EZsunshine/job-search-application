@@ -13,8 +13,8 @@ const [myJobHistory, setMyJobHistory] = useState([])
 
     return(
         <>
-    <Card sx={{ minWidth: 400, border: '1px solid grey'}}>
-      <CardContent>
+    <Card sx={{  border: '1px solid grey'}}>
+      <CardContent sx={{ display: "flex", flexDirection: "column", flexGroup: 1}}>
         <Typography sx={{ fontSize: 21 }} color="text.primary" gutterBottom>
           Job Name at Company
         </Typography>
