@@ -6,9 +6,6 @@ import SavedJobsListings from "./SavedJobsListings";
 function SavedJobs() {
   var { jobs } = useSelector((state) => state.favorite);
 
-  console.log(jobs)
-
-
   return (
     <>
       <div style={{ margin: 50 }}>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
@@ -22,11 +22,11 @@ function Listings({ data }) {
 
   const { jobs } = useSelector((state) => state.favorite);
   const { applied } = useSelector((state) => state.applied);
-  //console.log(jobs); 
+
 
   const flag = jobs.findIndex((item) => item.id === data.id);
   const appliedFlag = applied.findIndex((item => item.id === data.id));
-  //console.log(flag);
+  
 
   const minSalary = Math.round(data.salary_min).toString().slice(0,2);
   const maxSalary = Math.round(data.salary_max).toString().slice(0,3);
