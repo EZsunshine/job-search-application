@@ -47,12 +47,14 @@ export default function Register(props) {
     const lastname = data.get("lastname");
     const email = data.get("email");
     const password = data.get("password");
+    const confirmPassword = data.get("confirm_password");
     const v1 = NAME_REGEX.test(firstname);
     const v2 = NAME_REGEX.test(lastname);
     const v3 = EMAIL_REGEX.test(email);
     const v4 = PWD_REGEX.test(password);
-    console.log(v1, v2, v3, v4);
-    if (!v1 || !v2 || !v3 || !v4) {
+    const v5 = password === confirmPassword;
+    console.log(v1, v2, v3, v4, v5);
+    if (!v1 || !v2 || !v3 || !v4 || !v5) {
       console.log("Invalid Entry");
       return;
     }
