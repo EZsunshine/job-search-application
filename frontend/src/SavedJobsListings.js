@@ -5,6 +5,7 @@ import PriceChangeOutlinedIcon from "@mui/icons-material/PriceChangeOutlined";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import { useSelector } from "react-redux";
 
+
 function SavedJobsListings({ data }) {
   const minSalary = Math.round(data.salary_min).toString().slice(0, 2);
   const maxSalary = Math.round(data.salary_max).toString().slice(0, 3);
@@ -61,7 +62,7 @@ function SavedJobsListings({ data }) {
             justifyContent: "space-between",
           }}
         >
-          posted on {data.created}
+          posted on {data.created.substring(0, 10)}
           <Button
             variant="contained"
             href={data.redirect_url}

@@ -46,6 +46,7 @@ function Listings({ data }) {
       dispatch(addApply(data));
   }
 
+
   return (
     <Card sx={{ border: "1px solid grey", maxHeight: 250 }}>
       <div style={{display: 'flex', justifyContent: 'flex-end'}}>
@@ -104,7 +105,7 @@ function Listings({ data }) {
             justifyContent: "space-between",
           }}
         >
-          posted on {data.created}
+          posted on {data.created.substring(0, 10)}
           <Button
             variant="contained"
             href={data.redirect_url}
