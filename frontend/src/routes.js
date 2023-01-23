@@ -5,8 +5,6 @@ import DashboardLayout from './DashboardLayout';
 import Onboarding from './Onboarding';
 import Account from './Account';
 import Search from './Search';
-import Dashboard from './SavedJobs';
-import JobDescription from './JobDescription';
 import SavedJobs from './SavedJobs';
 import AppliedJobs from './AppliedJobs';
 

@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import Avatar from "@mui/material/Avatar";
 import CssBaseline from "@mui/material/CssBaseline";
-import { TextField, Button, FormControlLabel } from "@mui/material";
-import Checkbox from "@mui/material/Checkbox";
+import { TextField, Button } from "@mui/material";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";

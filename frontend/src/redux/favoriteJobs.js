@@ -37,12 +37,3 @@ const favoriteJob = createSlice({
 export const { addJobs, removeJobs } = favoriteJob.actions;
 
 export default favoriteJob.reducer;
-
-
-// state.jobs.map((item) => {
-//   if (item.id !== action.payload.id) {
-//     push
-//   }
-// })
-// jobs = [{id: 2, letter: 'b'},{id: 3, letter: 'c'}, {id: 1, letter: 'a'}]
-// action.payload.id = 1
