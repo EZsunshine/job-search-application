@@ -26,6 +26,7 @@ const appliedJobs = createSlice({
           state.applied = newApplied;
           state.total--;
         }
+        
         localStorage.setItem("applied", JSON.stringify(state.applied));
         return state;
       });

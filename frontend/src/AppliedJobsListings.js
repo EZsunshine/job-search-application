@@ -12,7 +12,9 @@ function AppliedJobsListings({ data }) {
   const maxSalary = Math.round(data.salary_max).toString().slice(0, 3);
 
   function handleDelete(data) {
+    console.log("click");
     dispatch(removeApply(data));
+    
   }
 
   return (

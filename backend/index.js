@@ -5,7 +5,7 @@ const port = 8000;
 const cors = require('cors');
 const { logger } = require('./middleware/logEvents');
 const errorHandler = require('./middleware/errorHandler'); 
-const fileUpload = require('express-fileupload')
+//const fileUpload = require('express-fileupload')
 
 // // custom middleware logger
 app.use(logger);
@@ -17,8 +17,6 @@ app.use(cors());
 // // built-in middleware for json 
 app.use(express.json());
 
-//middleware for uploading files/images
-app.use(fileUpload());
 
 
 // // routes

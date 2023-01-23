@@ -86,7 +86,12 @@ export default function Register(props) {
 
   return (
     <>
-      <div style={{ margin: 30, textAlign: "center" }}>
+      
+      {success ? (
+        <Login />
+      ) : (
+        <ThemeProvider theme={theme}>
+          <div style={{ margin: 30, textAlign: "center" }}>
         <Typography variant="h3" fontFamily="sans-serif" color="#1070E7">
           employ.ease
         </Typography>
@@ -98,10 +103,6 @@ export default function Register(props) {
           your job search stress-free and efficient
         </Typography>
       </div>
-      {success ? (
-        <Login />
-      ) : (
-        <ThemeProvider theme={theme}>
           <Container component="main" maxWidth="xs">
             <CssBaseline />
             <Box
@@ -200,9 +201,7 @@ export default function Register(props) {
             </Box>
             
           </Container>
-        </ThemeProvider>
-      )}
-      <img
+          <img
         src={require("./image/image.png")}
         alt="people"
         style={{
@@ -246,6 +245,9 @@ export default function Register(props) {
           <Copyright  />
         </div>
       </div>
+        </ThemeProvider>
+      )}
+      
     </>
   );
 }
