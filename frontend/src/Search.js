@@ -14,13 +14,17 @@ function Search() {
   const [dummy, setDummy] = useState([]);
   const [listings, setListings] = useState([]);
 
-  window.onload = () => {
+  function display() {
     fetch("http://localhost:8000/?keyword=designer&location=ny")
       .then((r) => r.json())
       .then((data) => {
         setDummy(data.results);
       });
-  };
+  }
+  
+  useEffect(() => {
+    display();
+  },[])
 
   function handleChange(e) {
     const value = e.target.value;
@@ -45,14 +49,16 @@ function Search() {
 
   return (
     <>
-      <div style={{textAlign: 'center'}}><Typography variant="h3">Welcome back!</Typography></div>
+      <Box sx={{ textAlign: "center" }}>
+        <Typography variant="h3">Welcome back!</Typography>
+      </Box>
 
       <div>
         <Box
           component="form"
           noValidate
           autoComplete="off"
-          sx={{textAlign: 'center'}}
+          sx={{ textAlign: "center" }}
           onSubmit={handleFormSubmit}
         >
           <TextField
@@ -115,10 +121,6 @@ function Search() {
                 columns={{ xs: 4, sm: 8, md: 12 }}
               >
                 {dummy.map((listing) => (
-                  // <Button onClick={() => {navigateToJobDescripton(listing)}}>
-                  //   <li key={listing.id}><Listings data={listing} /></li>
-                  // </Button>
-
                   <Grid item xs={2} sm={4} md={4} key={listing.id}>
                     <div>
                       <Listings data={listing} />
@@ -135,10 +137,6 @@ function Search() {
                 columns={{ xs: 4, sm: 8, md: 12 }}
               >
                 {listings.map((listing) => (
-                  // <Button onClick={() => {navigateToJobDescripton(listing)}}>
-                  //   <li key={listing.id}><Listings data={listing} /></li>
-                  // </Button>
-
                   <Grid item xs={2} sm={4} md={4} key={listing.id}>
                     <div>
                       <Listings data={listing} />

@@ -21,9 +21,11 @@ function Listings({ data }) {
   const [clickedApply, setClickedApply] = useState(false);
 
   const { jobs } = useSelector((state) => state.favorite);
+  const { applied } = useSelector((state) => state.applied);
   //console.log(jobs); 
 
   const flag = jobs.findIndex((item) => item.id === data.id);
+  const appliedFlag = applied.findIndex((item => item.id === data.id));
   //console.log(flag);
 
   const minSalary = Math.round(data.salary_min).toString().slice(0,2);
@@ -55,7 +57,7 @@ function Listings({ data }) {
         )}
       </Button>
       <Button onClick={() => handleApplyClick(data)}>
-        {clickedApply === true ? (
+        {clickedApply === true || appliedFlag !== -1 ? (
           <CheckBoxOutlinedIcon style={{ color: "green" }} />
         ) : (
           <CheckBoxOutlineBlankOutlinedIcon />

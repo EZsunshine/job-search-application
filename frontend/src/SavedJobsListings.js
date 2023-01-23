@@ -1,16 +1,28 @@
 import React from "react";
-import {Card, CardContent, Typography, Button} from "@mui/material";
+import { Card, CardContent, Typography, Button } from "@mui/material";
 import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
 import PriceChangeOutlinedIcon from "@mui/icons-material/PriceChangeOutlined";
+import HighlightOffIcon from "@mui/icons-material/HighlightOff";
+import { useSelector } from "react-redux";
 
-function SavedJobsListings({data}) {
-    const minSalary = Math.round(data.salary_min).toString().slice(0,2);
-    const maxSalary = Math.round(data.salary_max).toString().slice(0,3);
+function SavedJobsListings({ data }) {
+  const minSalary = Math.round(data.salary_min).toString().slice(0, 2);
+  const maxSalary = Math.round(data.salary_max).toString().slice(0, 3);
 
-    return ( 
-        <Card sx={{ border: "1px solid grey", maxHeight: 250 }}>
-      
-      <CardContent>
+  var { jobs } = useSelector((state) => state.favorite);
+
+  function handleDelete(data) {
+      jobs = jobs.filter((item) => item.id !== data.id)
+  }
+
+  return (
+    <Card sx={{ border: "1px solid grey", maxHeight: 250 }}>
+      <div style={{display: 'flex', justifyContent: 'flex-end'}}>
+      <Button onClick={() => handleDelete(data)}>
+        <HighlightOffIcon />
+      </Button>
+      </div>
+      <CardContent sx={{paddingTop: 0}}>
         <Typography sx={{ fontSize: 21 }} color="text.primary" gutterBottom>
           {data.title}
         </Typography>
@@ -26,8 +38,8 @@ function SavedJobsListings({data}) {
             width: "fit-content",
             paddingLeft: 5,
             paddingRight: 5,
-            justifyContent: 'center',
-            alignItems: 'center'
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
           <Typography
@@ -35,7 +47,6 @@ function SavedJobsListings({data}) {
               fontSize: 15,
               verticalAlign: "middle",
               display: "inline-flex",
-              
             }}
             color="text.primary"
             gutterBottom
@@ -63,7 +74,7 @@ function SavedJobsListings({data}) {
         </Typography>
       </CardContent>
     </Card>
-     );
+  );
 }
 
 export default SavedJobsListings;

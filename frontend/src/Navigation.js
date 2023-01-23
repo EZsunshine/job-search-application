@@ -64,8 +64,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Navigation() {
-  var { total } = useSelector((state) => state.favorite);
-  var { total } = useSelector((state) => state.applied);
+  // var { total } = useSelector((state) => state.favorite);
+  // var { total } = useSelector((state) => state.applied);
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -170,7 +170,7 @@ export default function Navigation() {
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <>
       <AppBar position="fixed">
         <Toolbar>
           <Box sx={{ display: "flex", flexGrow: 1 }}>
@@ -271,6 +271,6 @@ export default function Navigation() {
       </AppBar>
       {renderMobileMenu}
       {renderMenu}
-    </Box>
+    </>
   );
 }

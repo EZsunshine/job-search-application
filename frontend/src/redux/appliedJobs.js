@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-//import { toast } from "react-toastify";
 
 const initialState = {
-  applied: localStorage.getItem("applied") ? JSON.parse(localStorage.getItem('applied')) : [],
+  applied: localStorage.getItem("applied")
+    ? JSON.parse(localStorage.getItem("applied"))
+    : [],
   total: 0,
 };
 
@@ -13,9 +14,7 @@ const appliedJobs = createSlice({
     addApply(state, action) {
       state.applied.push(action.payload);
       state.total++;
-    //   toast.info("Job saved", {
-    //     position: "bottom-left",
-    //   });
+
       localStorage.setItem("applied", JSON.stringify(state.applied));
     },
   },
