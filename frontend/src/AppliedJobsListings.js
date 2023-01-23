@@ -4,15 +4,15 @@ import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
 import PriceChangeOutlinedIcon from "@mui/icons-material/PriceChangeOutlined";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import { useDispatch } from "react-redux";
-import { removeJobs } from "./redux/favoriteJobs";
+import { removeApply } from "./redux/appliedJobs";
 
-function SavedJobsListings({ data }) {
+function AppliedJobsListings({ data }) {
   const dispatch = useDispatch();
   const minSalary = Math.round(data.salary_min).toString().slice(0, 2);
   const maxSalary = Math.round(data.salary_max).toString().slice(0, 3);
 
   function handleDelete(data) {
-    dispatch(removeJobs(data));
+    dispatch(removeApply(data));
   }
 
   return (
@@ -77,4 +77,4 @@ function SavedJobsListings({ data }) {
   );
 }
 
-export default SavedJobsListings;
+export default AppliedJobsListings;
