@@ -4,7 +4,7 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import Button from "@mui/material/Button";
+import {Button, IconButton} from "@mui/material";
 import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
 import PriceChangeOutlinedIcon from "@mui/icons-material/PriceChangeOutlined";
 import CheckBoxOutlineBlankOutlinedIcon from '@mui/icons-material/CheckBoxOutlineBlankOutlined';
@@ -39,6 +39,7 @@ function Listings({ data }) {
       setClickedFavorite(false);
       dispatch(removeJobs(data));
     }
+    console.log(clickedFavorite);
   }
 
   function handleApplyClick(data) {
@@ -49,20 +50,20 @@ function Listings({ data }) {
   return (
     <Card sx={{ border: "1px solid grey", maxHeight: 250 }}>
       <div style={{display: 'flex', justifyContent: 'flex-end'}}>
-      <Button onClick={() => handleIconClick(data)}>
+      <IconButton onClick={() => handleIconClick(data)}>
         {clickedFavorite === true || flag !== -1 ? (
           <FavoriteIcon style={{ color: "red" }} />
         ) : (
           <FavoriteBorderIcon />
         )}
-      </Button>
-      <Button onClick={() => handleApplyClick(data)}>
+      </IconButton>
+      <IconButton onClick={() => handleApplyClick(data)}>
         {clickedApply === true || appliedFlag !== -1 ? (
           <CheckBoxOutlinedIcon style={{ color: "green" }} />
         ) : (
           <CheckBoxOutlineBlankOutlinedIcon />
         )}
-      </Button>
+      </IconButton>
       </div>
       <CardContent sx={{paddingTop: 0}}>
         <Typography sx={{ fontSize: 21 }} color="text.primary" gutterBottom>

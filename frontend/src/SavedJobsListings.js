@@ -1,10 +1,10 @@
 import React from "react";
-import { Card, CardContent, Typography, Button } from "@mui/material";
+import { Card, CardContent, Typography, Button, IconButton } from "@mui/material";
 import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
 import PriceChangeOutlinedIcon from "@mui/icons-material/PriceChangeOutlined";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import { useDispatch } from "react-redux";
-import {removeApply} from './redux/appliedJobs'
+import { removeApply } from "./redux/appliedJobs";
 
 function SavedJobsListings({ data }) {
   const dispatch = useDispatch();
@@ -12,17 +12,17 @@ function SavedJobsListings({ data }) {
   const maxSalary = Math.round(data.salary_max).toString().slice(0, 3);
 
   function handleDelete(data) {
-      dispatch(removeApply(data))
+    dispatch(removeApply(data));
   }
 
   return (
     <Card sx={{ border: "1px solid grey", maxHeight: 250 }}>
-      <div style={{display: 'flex', justifyContent: 'flex-end'}}>
-      <Button onClick={() => handleDelete(data)}>
-        <HighlightOffIcon />
-      </Button>
+      <div style={{ display: "flex", justifyContent: "flex-end" }}>
+        <IconButton onClick={() => handleDelete(data)}>
+          <HighlightOffIcon />
+        </IconButton>
       </div>
-      <CardContent sx={{paddingTop: 0}}>
+      <CardContent sx={{ paddingTop: 0 }}>
         <Typography sx={{ fontSize: 21 }} color="text.primary" gutterBottom>
           {data.title}
         </Typography>
