@@ -19,12 +19,13 @@ function AppliedJobsListings({ data }) {
 
   return (
     <Card sx={{ border: "1px solid grey", maxHeight: 250 }}>
-      <div style={{ display: "flex", justifyContent: "flex-end" }}>
+      {/* <div style={{ display: "flex", justifyContent: "flex-end" }}>
         <IconButton onClick={() => handleDelete(data)}>
           <HighlightOffIcon />
         </IconButton>
-      </div>
-      <CardContent sx={{ paddingTop: 0 }}>
+      </div> */}
+      {/* <CardContent sx={{ paddingTop: 0 }}> */}
+      <CardContent >
         <Typography sx={{ fontSize: 21 }} color="text.primary" gutterBottom>
           {data.title}
         </Typography>

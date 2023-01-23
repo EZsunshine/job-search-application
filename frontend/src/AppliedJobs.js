@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { Box, Grid } from "@mui/material";
 import React from "react";
-import AppliedJobsListings from "./SavedJobsListings";
+import AppliedJobsListings from "./AppliedJobsListings";
 
 function AppliedJobs() {
     var {applied} = useSelector((state) => state.applied)
