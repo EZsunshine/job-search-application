@@ -17,9 +17,22 @@ const appliedJobs = createSlice({
 
       localStorage.setItem("applied", JSON.stringify(state.applied));
     },
+    removeApply(state, action) {
+      state.applied.map((apply) => {
+        if (apply.id === action.payload.id) {
+          let newApplied = state.applied.filter(
+            (item) => item.id !== apply.id
+          );
+          state.applied = newApplied;
+          state.total--;
+        }
+        localStorage.setItem("applied", JSON.stringify(state.applied));
+        return state;
+      });
+    },
   },
 });
 
-export const { addApply } = appliedJobs.actions;
+export const { addApply, removeApply } = appliedJobs.actions;
 
 export default appliedJobs.reducer;

@@ -3,16 +3,16 @@ import { Card, CardContent, Typography, Button } from "@mui/material";
 import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
 import PriceChangeOutlinedIcon from "@mui/icons-material/PriceChangeOutlined";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
-import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import {removeApply} from './redux/appliedJobs'
 
 function SavedJobsListings({ data }) {
+  const dispatch = useDispatch();
   const minSalary = Math.round(data.salary_min).toString().slice(0, 2);
   const maxSalary = Math.round(data.salary_max).toString().slice(0, 3);
 
-  var { jobs } = useSelector((state) => state.favorite);
-
   function handleDelete(data) {
-      jobs = jobs.filter((item) => item.id !== data.id)
+      dispatch(removeApply(data))
   }
 
   return (

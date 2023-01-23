@@ -64,7 +64,7 @@ function Listings({ data }) {
         )}
       </Button>
       </div>
-      <CardContent>
+      <CardContent sx={{paddingTop: 0}}>
         <Typography sx={{ fontSize: 21 }} color="text.primary" gutterBottom>
           {data.title}
         </Typography>
