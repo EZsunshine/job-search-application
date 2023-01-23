@@ -247,17 +247,20 @@ export default function Navigation() {
                 <NotificationsIcon />
               </Badge>
             </IconButton>
+
+            <Link to={"/dashboard/account"}>
             <IconButton
               size="large"
               edge="end"
               aria-label="account of current user"
               aria-controls={menuId}
               aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
+
               color="inherit"
             >
               <AccountCircle />
             </IconButton>
+            </Link>
           </Box>
         </Toolbar>
       </AppBar>

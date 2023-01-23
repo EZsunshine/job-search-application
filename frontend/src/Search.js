@@ -38,8 +38,6 @@ function Search() {
     );
     const data = await response.json();
     setListings(data.results);
-    //console.log(listings);
-    //console.log(listings.results.length);
     setForm(emptyForm);
   }
 

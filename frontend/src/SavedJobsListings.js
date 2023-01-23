@@ -6,6 +6,7 @@ import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import { useDispatch } from "react-redux";
 import { removeJobs } from "./redux/favoriteJobs";
 
+
 function SavedJobsListings({ data }) {
   const dispatch = useDispatch();
   const minSalary = Math.round(data.salary_min).toString().slice(0, 2);
@@ -61,7 +62,7 @@ function SavedJobsListings({ data }) {
             justifyContent: "space-between",
           }}
         >
-          posted on {data.created}
+          posted on {data.created.substring(0, 10)}
           <Button
             variant="contained"
             href={data.redirect_url}
