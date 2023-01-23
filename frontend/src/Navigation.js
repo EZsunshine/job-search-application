@@ -255,7 +255,7 @@ export default function Navigation() {
               aria-label="account of current user"
               aria-controls={menuId}
               aria-haspopup="true"
-
+              sx={{ textDecoration: "none", color: "white" }}
               color="inherit"
             >
               <AccountCircle />
