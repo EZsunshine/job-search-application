@@ -1,20 +1,18 @@
 import React, { useState } from "react";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
+import { Typography } from "@mui/material";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import axios from "./api/axios";
 import Login from "./Login";
 
 const NAME_REGEX = /^[a-zA-Z]+$/;
-const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
+const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[?!@#$%]).{8,24}$/;
 const EMAIL_REGEX =
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
@@ -28,7 +26,7 @@ function Copyright(props) {
     >
       {"Copyright © "}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        employ.ease
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -89,6 +87,18 @@ export default function Register(props) {
 
   return (
     <>
+      <div style={{ margin: 30, textAlign: "center" }}>
+        <Typography variant="h3" fontFamily="sans-serif" color="#1070E7">
+          employ.ease
+        </Typography>
+        <Typography variant="h5" color="#444444">
+          Find your next Career move in minutes, not hours.
+        </Typography>
+        <Typography color="#444444" fontSize="18">
+          Our easy to use application system makes <br />
+          your job search stress-free and efficient
+        </Typography>
+      </div>
       {success ? (
         <Login />
       ) : (
@@ -97,18 +107,12 @@ export default function Register(props) {
             <CssBaseline />
             <Box
               sx={{
-                marginTop: 8,
+                marginTop: 4,
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
               }}
             >
-              <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-                <LockOutlinedIcon />
-              </Avatar>
-              <Typography component="h1" variant="h5">
-                Sign up
-              </Typography>
               <Box
                 component="form"
                 noValidate
@@ -182,6 +186,12 @@ export default function Register(props) {
                     <button
                       type="button"
                       onClick={() => props.onFormSwitch("login")}
+                      style={{
+                        background: "none",
+                        fontSize: "15px",
+                    color: "#3781DB",
+                        border: "none",
+                      }}
                     >
                       Already have an account? Sign in
                     </button>
@@ -189,10 +199,54 @@ export default function Register(props) {
                 </Grid>
               </Box>
             </Box>
-            <Copyright sx={{ mt: 5 }} />
+            
           </Container>
         </ThemeProvider>
       )}
+      <img
+        src={require("./image/image.png")}
+        alt="people"
+        style={{
+          display: "block",
+          marginLeft: "auto",
+          marginRight: "auto",
+          marginTop: "20px",
+          width: '80%'
+        }}
+      />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          width: "100%"
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            flex: 1,
+            paddingLeft: '30px',
+          }}
+        >
+          <span style={{fontFamily:"sans-serif", color:"#1070E7", fontSize: '30px'}} >
+            employ.ease
+          </span>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            flex: 2,
+            justifyContent: 'center',
+            alignItems: 'start',
+            paddingLeft: '170px'
+          }}
+        >
+          <Copyright  />
+        </div>
+      </div>
     </>
   );
 }

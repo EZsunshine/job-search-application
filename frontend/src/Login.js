@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import CssBaseline from "@mui/material/CssBaseline";
-import {TextField, Button, FormControlLabel} from "@mui/material";
+import { TextField, Button, FormControlLabel } from "@mui/material";
 import Checkbox from "@mui/material/Checkbox";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
@@ -24,7 +24,7 @@ function Copyright(props) {
     >
       {"Copyright © "}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        employe.ease
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -74,6 +74,18 @@ export default function Login(props) {
 
   return (
     <>
+      <div style={{ margin: 30, textAlign: "center" }}>
+        <Typography variant="h3" fontFamily="sans-serif" color="#1070E7">
+          employ.ease
+        </Typography>
+        <Typography variant="h5" color="#444444">
+          Find your next Career move in minutes, not hours.
+        </Typography>
+        <Typography color="#444444" fontSize="18">
+          Our easy to use application system makes <br />
+          your job search stress-free and efficient
+        </Typography>
+      </div>
       {success ? (
         navigate("/dashboard")
       ) : (
@@ -82,18 +94,12 @@ export default function Login(props) {
             <CssBaseline />
             <Box
               sx={{
-                marginTop: 8,
+                marginTop: 4,
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
               }}
             >
-              <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-                <LockOutlinedIcon />
-              </Avatar>
-              <Typography component="h1" variant="h5">
-                Sign in
-              </Typography>
               <Box
                 component="form"
                 onSubmit={handleSubmit}
@@ -120,36 +126,88 @@ export default function Login(props) {
                   id="password"
                   autoComplete="current-password"
                 />
-                <FormControlLabel
-                  control={<Checkbox value="remember" color="primary" />}
-                  label="Remember me"
-                />
+                <Typography sx={{ textAlign: "center" }}>
+                  By Clicking Agree & Join, you agree to the
+                  <strong> employ.ease</strong>
+                  <span style={{ color: "#3781DB" }}>
+                    {" "}
+                    User Agreement, Privacy
+                  </span>
+                  , and
+                  <span style={{ color: "#3781DB" }}> Cookie Plicy</span>
+                </Typography>
                 <Button
                   type="submit"
                   fullWidth
                   variant="contained"
                   sx={{ mt: 3, mb: 2 }}
                 >
-                  Sign In
+                  Agree and Join
                 </Button>
-                <Grid container>
-                  <Grid item xs>
-                    <Link href="#" variant="body2">
-                      Forgot password?
-                    </Link>
-                  </Grid>
+                <Grid container justifyContent="flex-end">
                   <Grid item>
-                    <button onClick={() => props.onFormSwitch("register")}>
+                    <button
+                      onClick={() => props.onFormSwitch("register")}
+                      style={{
+                        background: "none",
+                        fontSize: "15px",
+                        color: "#3781DB",
+                        border: "none",
+                      }}
+                    >
                       "Don't have an account? Sign Up"
                     </button>
                   </Grid>
                 </Grid>
               </Box>
             </Box>
-            <Copyright sx={{ mt: 8, mb: 4 }} />
           </Container>
         </ThemeProvider>
       )}
+      <img
+        src={require("./image/image.png")}
+        alt="people"
+        style={{
+          display: "block",
+          marginLeft: "auto",
+          marginRight: "auto",
+          marginTop: "20px",
+          width: '80%'
+        }}
+      />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          width: "100%"
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            flex: 1,
+            paddingLeft: '30px',
+          }}
+        >
+          <span style={{fontFamily:"sans-serif", color:"#1070E7", fontSize: '30px'}} >
+            employ.ease
+          </span>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            flex: 2,
+            justifyContent: 'center',
+            alignItems: 'start',
+            paddingLeft: '170px'
+          }}
+        >
+          <Copyright  />
+        </div>
+      </div>
     </>
   );
 }
