@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { Box, Grid } from "@mui/material";
 import React from "react";
-import SavedJobsListings from "./SavedJobsListings";
+import AppliedJobsListings from "./SavedJobsListings";
 
 function AppliedJobs() {
     var {applied} = useSelector((state) => state.applied)
@@ -19,7 +19,7 @@ function AppliedJobs() {
               {applied.map((listing) => (
                 <Grid item xs={2} sm={4} md={4} key={listing.id}>
                   <div>
-                    <SavedJobsListings data={listing} />
+                    <AppliedJobsListings data={listing} />
                   </div>
                 </Grid>
               ))}
