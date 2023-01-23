@@ -2,6 +2,7 @@ import React from "react";
 import {Card, CardContent, Typography, Button} from "@mui/material";
 import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
 import PriceChangeOutlinedIcon from "@mui/icons-material/PriceChangeOutlined";
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 function SavedJobsListings({data}) {
     const minSalary = Math.round(data.salary_min).toString().slice(0,2);
@@ -50,7 +51,7 @@ function SavedJobsListings({data}) {
             justifyContent: "space-between",
           }}
         >
-          posted on {data.created}
+          posted on {data.created.substring(0, 10)}
           <Button
             variant="contained"
             href={data.redirect_url}
