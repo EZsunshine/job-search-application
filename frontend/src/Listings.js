@@ -28,8 +28,6 @@ function Listings({ data }) {
 
   const minSalary = Math.round(data.salary_min).toString().slice(0,2);
   const maxSalary = Math.round(data.salary_max).toString().slice(0,3);
-  //console.log(maxSalary);
-
 
   function handleIconClick(data) {
     if (clickedFavorite === false) {

@@ -5,13 +5,13 @@ import App from "./App";
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import favoriteReducer from "./redux/favoriteJobs";
-import appliedJobs from "./redux/appliedJobs";
+import appliedReducer from "./redux/appliedJobs";
 import { AuthProvider } from "./context/AuthProvider";
 
 const store = configureStore({
   reducer: {
     favorite: favoriteReducer,
-    applied: appliedJobs
+    applied: appliedReducer,
   },
 });
 

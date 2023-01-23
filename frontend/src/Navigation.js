@@ -18,6 +18,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import { Button } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useSelector } from "react-redux";
 
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -63,6 +64,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Navigation() {
+  var { total } = useSelector((state) => state.favorite);
+  var { total } = useSelector((state) => state.applied);
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const [value, setValue] = React.useState(0);
@@ -208,7 +212,9 @@ export default function Navigation() {
                 to={"/dashboard/saved"}
                 style={{ textDecoration: "none", color: "white" }}
               >
-                <Tab label="Saved Jobs" />
+                <Tab
+                  label="Saved Jobs"
+                />
               </Link>
 
               <Link
