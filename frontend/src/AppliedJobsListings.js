@@ -64,7 +64,7 @@ function AppliedJobsListings({ data }) {
             justifyContent: "space-between",
           }}
         >
-          posted on {data.created}
+          posted on {data.created.substring(0, 10)}
           <Button
             variant="contained"
             href={data.redirect_url}

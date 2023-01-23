@@ -11,54 +11,11 @@ import Menu from "@mui/material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-
-import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
 
-// const Search = styled("div")(({ theme }) => ({
-//   position: "relative",
-//   borderRadius: theme.shape.borderRadius,
-//   backgroundColor: alpha(theme.palette.common.white, 0.15),
-//   "&:hover": {
-//     backgroundColor: alpha(theme.palette.common.white, 0.25),
-//   },
-//   marginRight: theme.spacing(2),
-//   marginLeft: 0,
-//   width: "100%",
-//   [theme.breakpoints.up("sm")]: {
-//     marginLeft: theme.spacing(3),
-//     width: "auto",
-//   },
-// }));
-
-// const SearchIconWrapper = styled("div")(({ theme }) => ({
-//   padding: theme.spacing(0, 2),
-//   height: "100%",
-//   position: "absolute",
-//   pointerEvents: "none",
-//   display: "flex",
-//   alignItems: "center",
-//   justifyContent: "center",
-// }));
-
-// const StyledInputBase = styled(InputBase)(({ theme }) => ({
-//   color: "inherit",
-//   "& .MuiInputBase-input": {
-//     padding: theme.spacing(1, 1, 1, 0),
-//     // vertical padding + font size from searchIcon
-//     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-//     transition: theme.transitions.create("width"),
-//     width: "100%",
-//     [theme.breakpoints.up("md")]: {
-//       width: "20ch",
-//     },
-//   },
-// }));
 
 export default function Navigation() {
-  // var { total } = useSelector((state) => state.favorite);
-  // var { total } = useSelector((state) => state.applied);
-
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const [value, setValue] = React.useState(0);
@@ -82,10 +39,6 @@ export default function Navigation() {
     setAnchorEl(null);
     handleMobileMenuClose();
   };
-
-  // const handleMobileMenuOpen = (event) => {
-  //   setMobileMoreAnchorEl(event.currentTarget);
-  // };
 
   const menuId = "primary-search-account-menu";
   const renderMenu = (
@@ -190,7 +143,6 @@ export default function Navigation() {
             <Tabs
               value={value}
               onChange={handleTabChange}
-              color="white"
               centered
             >
               <Link
@@ -204,9 +156,7 @@ export default function Navigation() {
                 to={"/dashboard/saved"}
                 style={{ textDecoration: "none", color: "white" }}
               >
-                <Tab
-                  label="Saved Jobs"
-                />
+                <Tab label="Saved Jobs" />
               </Link>
 
               <Link
@@ -249,17 +199,17 @@ export default function Navigation() {
             </IconButton>
 
             <Link to={"/dashboard/account"}>
-            <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              sx={{ textDecoration: "none", color: "white" }}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
+              <IconButton
+                size="large"
+                edge="end"
+                aria-label="account of current user"
+                aria-controls={menuId}
+                aria-haspopup="true"
+                sx={{ textDecoration: "none", color: "white" }}
+                color="inherit"
+              >
+                <AccountCircle />
+              </IconButton>
             </Link>
           </Box>
         </Toolbar>

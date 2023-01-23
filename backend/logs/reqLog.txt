@@ -2,3 +2,5 @@
 20230123	16:16:09	b1f6c20d-743c-4147-afe2-d49f8ce0f06e	POST	http://localhost:3000	/auth
 20230123	16:16:09	3b89a30c-07f3-475d-8564-3fd1d3da9009	GET	http://localhost:3000	/?keyword=designer&location=ny
 20230123	16:16:10	79b64b32-ec93-464c-a054-a7f8457dec01	GET	http://localhost:3000	/?keyword=designer&location=ny
+20230123	18:08:30	66cbe4d8-36ac-4a14-84f2-687b12803e59	GET	http://localhost:3000	/?keyword=designer&location=ny
+20230123	18:08:31	7b4c4c3a-17e5-459f-bf0e-b4b012c5c41c	GET	http://localhost:3000	/?keyword=designer&location=ny
