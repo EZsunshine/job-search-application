@@ -1,7 +1,10 @@
 # Thinkful Hackathon - Job Search Application
 ## Technology
-React, MUI, Node, express,axios
-## Instructio n
+React, MUI, Node, express, axios
+## Demo
+![](2023-01-23-16-14-57.png)
+![](2023-01-23-16-16-33.png)
+## Instruction
 Download the repo and `npm start` on both frontend and backend folders. We used API from [adzuna](https://developer.adzuna.com/). You can create an account and 
 add API_ID and API_KEY to backend .env file to get access to the api.
 
@@ -26,3 +29,7 @@ add API_ID and API_KEY to backend .env file to get access to the api.
 - [ ]  A database can be created to save user accounts information to increase safety and this project can be not limited by a single browser.
 - [ ]  JWT can be added to login/register/logout
 - [ ]  Still working on to get first name and last name from backend and show on the dashboard welcome page.
+
+## Contributors
+- UI/UX: Thomas Sakariasen, Potchanakorn Nala, Sara Asgari kia, James Nash
+- Dev: David Jiang, Elaine Zhu

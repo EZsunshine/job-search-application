@@ -151,7 +151,7 @@ export default function Login(props) {
                         border: "none",
                       }}
                     >
-                      "Don't have an account? Sign Up"
+                      Don't have an account? Sign Up
                     </button>
                   </Grid>
                 </Grid>
