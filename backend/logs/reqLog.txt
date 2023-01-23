@@ -9,3 +9,5 @@
 20230123	18:23:43	5a9489f1-51b3-4410-af1d-2a70ee9a9dbe	GET	http://localhost:3000	/?keyword=designer&location=ny
 20230123	18:24:54	ed2b38a8-e2cd-4d54-90da-69a3e36130c7	GET	http://localhost:3000	/?keyword=designer&location=ny
 20230123	18:25:10	c15bb1fa-29b8-4381-868c-d65b23a741a5	GET	http://localhost:3000	/?keyword=designer&location=ny
+20230123	18:25:57	863a7fd6-d8df-4085-8364-eed9d085f5b7	GET	http://localhost:3000	/?keyword=designer&location=ny
+20230123	18:25:58	8d7a5431-d748-465e-889f-dc8c5ef2b951	GET	http://localhost:3000	/?keyword=designer&location=ny

@@ -2,7 +2,7 @@
 ## Technology
 React, MUI, Node, express, axios
 ## Demo
-![](2023-01-23-16-14-57.png)
+![](2023-01-23-18-26-44.png)
 ![](2023-01-23-16-16-33.png)
 ## Instruction
 Download the repo and `npm start` on both frontend and backend folders. We used API from [adzuna](https://developer.adzuna.com/). You can create an account and 
