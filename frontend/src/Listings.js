@@ -111,6 +111,7 @@ function Listings({ data }) {
           <Button
             variant="contained"
             href={data.redirect_url}
+            target="_blank"
             color="primary"
             size="small"
             endIcon={<DoubleArrowIcon />}
