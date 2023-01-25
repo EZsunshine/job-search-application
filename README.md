@@ -23,7 +23,7 @@ add API_ID and API_KEY to backend .env file to get access to the api.
 
 ## Backend
 - Backend was built by `Express` following MVC design pattern.
-- REST API was used to get user information. All the account data was saved in a json file. Password was encryped using `bcrypt` package.
+- REST API was used to get user information. All the account data was saved in a json file. Password was encrypted using `bcrypt` package.
 
 ## Future Improvements
 - [ ]  A database can be created to save user accounts information to increase safety and this project can be not limited by a single browser.
