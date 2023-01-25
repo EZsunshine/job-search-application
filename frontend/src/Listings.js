@@ -9,7 +9,6 @@ import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
 import PriceChangeOutlinedIcon from "@mui/icons-material/PriceChangeOutlined";
 import CheckBoxOutlineBlankOutlinedIcon from "@mui/icons-material/CheckBoxOutlineBlankOutlined";
 import CheckBoxOutlinedIcon from "@mui/icons-material/CheckBoxOutlined";
-import CardOverflow from "@mui/joy/CardOverflow";
 
 import { useDispatch } from "react-redux";
 import { addJobs, removeJobs } from "./redux/favoriteJobs";
