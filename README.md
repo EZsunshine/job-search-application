@@ -31,5 +31,5 @@ add API_ID and API_KEY to backend .env file to get access to the api.
 - [ ]  Still working on to get first name and last name from backend and show on the dashboard welcome page.
 
 ## Contributors
-- UI/UX: Thomas Sakariasen, Potchanakorn Nala, Sara Asgari kia, James Nash
+- UI/UX: [Thomas Sakariasen](http://tomsakariasen.tilda.ws/), Potchanakorn Nala, Sara Asgari kia, James Nash
 - Dev: David Jiang, Elaine Zhu
