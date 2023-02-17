@@ -43,17 +43,21 @@ export default function Register(props) {
     event.preventDefault();
 
     const data = new FormData(event.currentTarget);
+    console.log(data);
     const firstname = data.get("firstname");
     const lastname = data.get("lastname");
     const email = data.get("email");
     const password = data.get("password");
+    const confirmPassword = data.get("confirm");
     const v1 = NAME_REGEX.test(firstname);
     const v2 = NAME_REGEX.test(lastname);
     const v3 = EMAIL_REGEX.test(email);
     const v4 = PWD_REGEX.test(password);
-    console.log(v1, v2, v3, v4);
-    if (!v1 || !v2 || !v3 || !v4) {
+    const v5 = password === confirmPassword;
+    console.log(v1, v2, v3, v4, v5);
+    if (!v1 || !v2 || !v3 || !v4 || !v5) {
       console.log("Invalid Entry");
+      console.log(password, confirmPassword);
       return;
     }
     console.log({
@@ -64,7 +68,7 @@ export default function Register(props) {
     try {
       const response = await axios.post(
         "/register",
-        JSON.stringify({ firstname, lastname, email, password }),
+        JSON.stringify({ firstname, lastname, email, password, confirmPassword }),
         {
           headers: { "Content-Type": "application/json" },
         }
@@ -168,7 +172,7 @@ export default function Register(props) {
                       name="confirm"
                       label="Confirm"
                       type="password"
-                      id="confirm_password"
+                      id="confirm"
                       autoComplete="new-password"
                     />
                   </Grid>

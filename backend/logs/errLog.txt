@@ -1,4 +1,0 @@
-20230120	17:11:43	f740be35-f524-4d0a-8c49-11d44c7df388	Error: ENOENT: no such file or directory, stat '/Users/ezsun/Desktop/job-search-application/backend/routes/views/index.html'
-20230120	17:12:16	34429a5d-a9c6-4529-a704-63af7e23d5b5	ForbiddenError: Forbidden
-20230122	21:17:13	4eebe68c-8edd-414c-abcc-4b50ed28a61a	ReferenceError: path is not defined
-20230122	21:17:19	f55aa452-a0ef-4e52-baa9-f526895199f4	ReferenceError: path is not defined

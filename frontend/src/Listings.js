@@ -1,14 +1,14 @@
-import React, { useState , useEffect } from "react";
+import React, { useState } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import {Button, IconButton} from "@mui/material";
+import { Button, IconButton } from "@mui/material";
 import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
 import PriceChangeOutlinedIcon from "@mui/icons-material/PriceChangeOutlined";
-import CheckBoxOutlineBlankOutlinedIcon from '@mui/icons-material/CheckBoxOutlineBlankOutlined';
-import CheckBoxOutlinedIcon from '@mui/icons-material/CheckBoxOutlined';
+import CheckBoxOutlineBlankOutlinedIcon from "@mui/icons-material/CheckBoxOutlineBlankOutlined";
+import CheckBoxOutlinedIcon from "@mui/icons-material/CheckBoxOutlined";
 
 import { useDispatch } from "react-redux";
 import { addJobs, removeJobs } from "./redux/favoriteJobs";
@@ -23,13 +23,11 @@ function Listings({ data }) {
   const { jobs } = useSelector((state) => state.favorite);
   const { applied } = useSelector((state) => state.applied);
 
-
   const flag = jobs.findIndex((item) => item.id === data.id);
-  const appliedFlag = applied.findIndex((item => item.id === data.id));
-  
+  const appliedFlag = applied.findIndex((item) => item.id === data.id);
 
-  const minSalary = Math.round(data.salary_min).toString().slice(0,2);
-  const maxSalary = Math.round(data.salary_max).toString().slice(0,3);
+  const minSalary = Math.round(data.salary_min).toString().slice(0, 2);
+  const maxSalary = Math.round(data.salary_max).toString().slice(0, 3);
 
   function handleIconClick(data) {
     if (clickedFavorite === false) {
@@ -43,33 +41,36 @@ function Listings({ data }) {
   }
 
   function handleApplyClick(data) {
-      setClickedApply(true);
-      dispatch(addApply(data));
+    setClickedApply(true);
+    dispatch(addApply(data));
   }
-
 
   return (
     <Card sx={{ border: "1px solid grey", maxHeight: 250 }}>
-      <div style={{display: 'flex', justifyContent: 'flex-end'}}>
-      <IconButton onClick={() => handleIconClick(data)}>
-        {clickedFavorite === true || flag !== -1 ? (
-          <FavoriteIcon style={{ color: "red" }} />
-        ) : (
-          <FavoriteBorderIcon />
-        )}
-      </IconButton>
-      <IconButton onClick={() => handleApplyClick(data)}>
-        {clickedApply === true || appliedFlag !== -1 ? (
-          <CheckBoxOutlinedIcon style={{ color: "green" }} />
-        ) : (
-          <CheckBoxOutlineBlankOutlinedIcon />
-        )}
-      </IconButton>
+      <div style={{ display: "flex", justifyContent: "flex-end" }}>
+        <IconButton onClick={() => handleIconClick(data)}>
+          {clickedFavorite === true || flag !== -1 ? (
+            <FavoriteIcon style={{ color: "red" }} />
+          ) : (
+            <FavoriteBorderIcon />
+          )}
+        </IconButton>
+        <IconButton onClick={() => handleApplyClick(data)}>
+          {clickedApply === true || appliedFlag !== -1 ? (
+            <CheckBoxOutlinedIcon style={{ color: "green" }} />
+          ) : (
+            <CheckBoxOutlineBlankOutlinedIcon />
+          )}
+        </IconButton>
       </div>
-      <CardContent sx={{paddingTop: 0}}>
+
+      <CardContent sx={{ paddingTop: 0 }}>
         <Typography sx={{ fontSize: 21 }} color="text.primary" gutterBottom>
-          {data.title}
+          {data.title.length >= 40
+            ? `${data.title.substring(0, 40)}...`
+            : data.title}
         </Typography>
+
         <Typography sx={{ fontSize: 18 }} color="#4dabf5" gutterBottom>
           {data.company.display_name}
         </Typography>
@@ -82,8 +83,8 @@ function Listings({ data }) {
             width: "fit-content",
             paddingLeft: 5,
             paddingRight: 5,
-            justifyContent: 'center',
-            alignItems: 'center'
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
           <Typography
@@ -91,7 +92,6 @@ function Listings({ data }) {
               fontSize: 15,
               verticalAlign: "middle",
               display: "inline-flex",
-              
             }}
             color="text.primary"
             gutterBottom
@@ -110,6 +110,7 @@ function Listings({ data }) {
           <Button
             variant="contained"
             href={data.redirect_url}
+            target="_blank"
             color="primary"
             size="small"
             endIcon={<DoubleArrowIcon />}

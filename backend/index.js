@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 8000;
-// const path = require('path');
+const path = require('path');
 const cors = require('cors');
 const { logger } = require('./middleware/logEvents');
 const errorHandler = require('./middleware/errorHandler'); 
@@ -16,8 +16,6 @@ app.use(cors());
 
 // // built-in middleware for json 
 app.use(express.json());
-
-
 
 // // routes
 app.use('/register', require('./routes/register'));

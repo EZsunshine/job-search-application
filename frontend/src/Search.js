@@ -48,7 +48,7 @@ function Search() {
   return (
     <>
       <Box sx={{ textAlign: "center" }}>
-        <Typography variant="h3">Welcome back!</Typography>
+        <Typography variant="h3" fontFamily="sans-serif">Welcome back!</Typography>
       </Box>
 
       <div>
